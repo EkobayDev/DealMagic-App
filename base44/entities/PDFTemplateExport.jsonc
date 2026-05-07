@@ -1,0 +1,30 @@
+{
+  "name": "PDFTemplateExport",
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "description": "ID of the PDF template that was exported"
+    },
+    "template_name": {
+      "type": "string",
+      "description": "Name of the template at time of export"
+    },
+    "transaction_id": {
+      "type": "string",
+      "description": "ID of the transaction used to fill the template"
+    },
+    "transaction_address": {
+      "type": "string",
+      "description": "Property address of the transaction"
+    },
+    "exported_by": {
+      "type": "string",
+      "description": "Email of the user who exported"
+    }
+  },
+  "required": [
+    "template_id",
+    "template_name"
+  ]
+}

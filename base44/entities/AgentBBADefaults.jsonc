@@ -1,0 +1,84 @@
+{
+  "name": "AgentBBADefaults",
+  "type": "object",
+  "properties": {
+    "agent_profile_id": {
+      "type": "string",
+      "description": "ID of the linked AgentProfile record"
+    },
+    "agent_name": {
+      "type": "string"
+    },
+    "commission_percent": {
+      "type": "number",
+      "description": "Default buyer agent compensation percentage"
+    },
+    "compensation_type": {
+      "type": "string",
+      "enum": [
+        "percent",
+        "flat"
+      ],
+      "default": "percent"
+    },
+    "commission_amount": {
+      "type": "number",
+      "description": "Default flat fee compensation amount"
+    },
+    "financing_type": {
+      "type": "string",
+      "enum": [
+        "conventional",
+        "fha",
+        "va",
+        "cash",
+        "other"
+      ],
+      "default": "conventional"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "single_family",
+        "condo",
+        "multi_family",
+        "land",
+        "commercial"
+      ],
+      "default": "single_family"
+    },
+    "agreement_duration_months": {
+      "type": "number",
+      "description": "Default agreement duration in months (e.g. 6)",
+      "default": 6
+    },
+    "county": {
+      "type": "string",
+      "description": "Default county"
+    },
+    "city": {
+      "type": "string",
+      "description": "Default city"
+    },
+    "state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "lender_name": {
+      "type": "string",
+      "description": "Default preferred lender name"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Any additional default notes to pre-fill on new BBAs"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "User-defined custom key-value fields",
+      "default": {}
+    }
+  },
+  "required": [
+    "agent_profile_id"
+  ]
+}

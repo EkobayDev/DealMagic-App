@@ -1,0 +1,85 @@
+{
+  "name": "Vendor",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "appraisers",
+        "inspectors",
+        "lawn",
+        "roofers",
+        "termite",
+        "title",
+        "make_ready_cleaning",
+        "painters",
+        "flooring",
+        "handyman",
+        "hauling_debris"
+      ],
+      "description": "Category of service"
+    },
+    "business_name": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    },
+    "contact_photo_url": {
+      "type": "string",
+      "description": "Photo of the main contact person"
+    },
+    "elevator_pitch_url": {
+      "type": "string",
+      "description": "Short video URL of vendor's elevator pitch (auto-plays on hover)"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "cell_phone": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "star_rating": {
+      "type": "number",
+      "description": "Quality rating from 1 to 5 stars"
+    },
+    "review_notes": {
+      "type": "string",
+      "description": "Personal review notes tracking quality of work over time"
+    },
+    "liked_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of user emails who liked this vendor",
+      "default": []
+    }
+  },
+  "required": [
+    "business_name",
+    "category"
+  ]
+}

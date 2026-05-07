@@ -1,0 +1,120 @@
+{
+  "name": "BBSABuilderSession",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of this BBSA builder session"
+    },
+    "fields": {
+      "type": "array",
+      "description": "User-defined fields",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "sourceOptions": {
+      "type": "array",
+      "description": "Customized source field groups",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "mappings": {
+      "type": "array",
+      "description": "PDF field mappings",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "pdfUrl": {
+      "type": "string",
+      "description": "URL of the uploaded PDF template"
+    },
+    "pdfName": {
+      "type": "string",
+      "description": "Original filename of the PDF"
+    },
+    "fieldValues": {
+      "type": "object",
+      "description": "Saved field values from the Fill & Export tab",
+      "default": {}
+    },
+    "isShared": {
+      "type": "boolean",
+      "description": "When true, this session is published as the shared template for all agents",
+      "default": false
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "read": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "data.isShared": true
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "write": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

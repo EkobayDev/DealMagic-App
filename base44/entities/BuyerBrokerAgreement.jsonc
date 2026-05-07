@@ -1,0 +1,169 @@
+{
+  "name": "BuyerBrokerAgreement",
+  "type": "object",
+  "properties": {
+    "contact_id": {
+      "type": "string",
+      "description": "ID of the linked Contact record"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Buyer full name (from contact)"
+    },
+    "buyer_email": {
+      "type": "string",
+      "description": "Buyer email address"
+    },
+    "buyer_phone": {
+      "type": "string",
+      "description": "Buyer phone number"
+    },
+    "buyer_initials": {
+      "type": "string",
+      "description": "Buyer initials (auto-derived from name)"
+    },
+    "transaction_id": {
+      "type": "string",
+      "description": "ID of the linked Transaction (optional)"
+    },
+    "property_address": {
+      "type": "string",
+      "description": "Target property address or general area"
+    },
+    "city": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "purchase_price": {
+      "type": "number",
+      "description": "Buyer's budget or agreed purchase price"
+    },
+    "compensation_type": {
+      "type": "string",
+      "enum": [
+        "percent",
+        "flat"
+      ],
+      "default": "percent",
+      "description": "Whether compensation is a percentage or flat fee"
+    },
+    "commission_percent": {
+      "type": "number",
+      "description": "Compensation percentage (e.g. 3)"
+    },
+    "commission_amount": {
+      "type": "number",
+      "description": "Flat fee compensation amount in dollars"
+    },
+    "lender_name": {
+      "type": "string",
+      "description": "Buyer's lender name"
+    },
+    "financing_type": {
+      "type": "string",
+      "enum": [
+        "conventional",
+        "fha",
+        "va",
+        "cash",
+        "other"
+      ],
+      "default": "conventional"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "single_family",
+        "condo",
+        "multi_family",
+        "land",
+        "commercial"
+      ],
+      "default": "single_family"
+    },
+    "agreement_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the BBA agreement begins"
+    },
+    "agreement_end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the BBA agreement expires"
+    },
+    "closing_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected closing date"
+    },
+    "agent_name": {
+      "type": "string",
+      "description": "Representing agent name"
+    },
+    "agent_license": {
+      "type": "string"
+    },
+    "agent_phone": {
+      "type": "string"
+    },
+    "agent_email": {
+      "type": "string"
+    },
+    "brokerage_name": {
+      "type": "string"
+    },
+    "brokerage_license": {
+      "type": "string"
+    },
+    "brokerage_address": {
+      "type": "string"
+    },
+    "brokerage_city": {
+      "type": "string"
+    },
+    "brokerage_state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "brokerage_zip": {
+      "type": "string"
+    },
+    "office_phone": {
+      "type": "string"
+    },
+    "broker_supervisor": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "sent",
+        "signed",
+        "expired"
+      ],
+      "default": "draft",
+      "description": "Current status of this BBA"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "custom_answers": {
+      "type": "object",
+      "description": "Freeform key-value answers from the questionnaire (for any extra custom questions)"
+    },
+    "field_values": {
+      "type": "object",
+      "description": "Agent-entered values keyed by fieldKey from the PDF template mapping",
+      "default": {}
+    }
+  },
+  "required": [
+    "contact_name"
+  ]
+}

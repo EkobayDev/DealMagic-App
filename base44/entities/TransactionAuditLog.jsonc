@@ -1,0 +1,54 @@
+{
+  "name": "TransactionAuditLog",
+  "type": "object",
+  "properties": {
+    "transaction_id": {
+      "type": "string",
+      "description": "ID of the transaction that was changed"
+    },
+    "transaction_address": {
+      "type": "string",
+      "description": "Property address for display"
+    },
+    "changed_by": {
+      "type": "string",
+      "description": "Email of the user who made the change"
+    },
+    "changed_by_name": {
+      "type": "string",
+      "description": "Full name of the user who made the change"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "create",
+        "update",
+        "delete"
+      ],
+      "description": "Type of change event"
+    },
+    "changes": {
+      "type": "array",
+      "description": "List of field changes",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "old_value": {
+            "type": "string"
+          },
+          "new_value": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "transaction_id",
+    "event_type"
+  ]
+}

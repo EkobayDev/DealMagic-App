@@ -1,0 +1,102 @@
+{
+  "name": "AgentProfile",
+  "type": "object",
+  "properties": {
+    "agent_name": {
+      "type": "string"
+    },
+    "license_number": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    },
+    "brokerage_name": {
+      "type": "string"
+    },
+    "brokerage_license_number": {
+      "type": "string",
+      "description": "Brokerage license number"
+    },
+    "brokerage_address": {
+      "type": "string"
+    },
+    "brokerage_city": {
+      "type": "string"
+    },
+    "brokerage_state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "brokerage_zip": {
+      "type": "string"
+    },
+    "office_phone": {
+      "type": "string"
+    },
+    "office_email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "net_sheet_disclaimer": {
+      "type": "string"
+    },
+    "default_commission_percent": {
+      "type": "number"
+    },
+    "default_title_company": {
+      "type": "string"
+    },
+    "broker_supervisor": {
+      "type": "string",
+      "description": "Broker supervisor full name"
+    },
+    "broker_supervisor_email": {
+      "type": "string",
+      "description": "Broker supervisor email"
+    },
+    "broker_supervisor_website": {
+      "type": "string",
+      "description": "Broker supervisor website URL"
+    },
+    "bbi_step_order": {
+      "type": "array",
+      "description": "Persisted BBI interview question order",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "bbi_custom_steps": {
+      "type": "array",
+      "description": "Persisted BBI custom/override questions",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "bbi_pdf_template_id": {
+      "type": "string",
+      "description": "ID of the preferred PDF template for the BBI export"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "User-defined custom key-value fields",
+      "default": {}
+    }
+  },
+  "required": [
+    "agent_name"
+  ]
+}

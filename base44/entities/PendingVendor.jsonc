@@ -1,0 +1,82 @@
+{
+  "name": "PendingVendor",
+  "type": "object",
+  "properties": {
+    "business_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "appraisers",
+        "inspectors",
+        "lawn",
+        "roofers",
+        "termite",
+        "title",
+        "make_ready_cleaning",
+        "painters",
+        "flooring",
+        "handyman",
+        "hauling_debris"
+      ]
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "cell_phone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    },
+    "contact_photo_url": {
+      "type": "string"
+    },
+    "elevator_pitch_url": {
+      "type": "string",
+      "description": "Short video URL for elevator pitch"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Vendor's description of their services"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "rejection_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "business_name",
+    "category",
+    "contact_name",
+    "email"
+  ]
+}

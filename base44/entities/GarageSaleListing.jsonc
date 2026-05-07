@@ -1,0 +1,78 @@
+{
+  "name": "GarageSaleListing",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Item title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "furniture",
+        "electronics",
+        "clothing",
+        "tools",
+        "appliances",
+        "books",
+        "toys",
+        "sports",
+        "vehicles",
+        "other"
+      ],
+      "default": "other"
+    },
+    "price": {
+      "type": "number",
+      "description": "Asking price"
+    },
+    "photo_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Photos of the item",
+      "default": []
+    },
+    "link": {
+      "type": "string",
+      "description": "Optional external link (eBay, Facebook Marketplace, etc.)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the item"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "sold",
+        "inactive"
+      ],
+      "default": "active"
+    },
+    "date_sold": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the item was sold"
+    },
+    "seller_name": {
+      "type": "string"
+    },
+    "seller_email": {
+      "type": "string"
+    },
+    "contact_info": {
+      "type": "string",
+      "description": "Phone or preferred contact method"
+    }
+  },
+  "required": [
+    "title",
+    "status"
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "property_address": {
+      "type": "string",
+      "description": "Full property street address"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "mls_number": {
+      "type": "string"
+    },
+    "listing_url": {
+      "type": "string",
+      "description": "Zillow or external listing URL"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "coming_soon",
+        "under_contract",
+        "pending",
+        "closed",
+        "cancelled",
+        "expired"
+      ],
+      "default": "active"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "purchase",
+        "listing",
+        "dual"
+      ],
+      "default": "purchase"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "single_family",
+        "condo",
+        "townhouse",
+        "multi_family",
+        "land",
+        "commercial"
+      ],
+      "default": "single_family"
+    },
+    "buyer_name": {
+      "type": "string"
+    },
+    "buyer_email": {
+      "type": "string"
+    },
+    "buyer_phone": {
+      "type": "string"
+    },
+    "seller_name": {
+      "type": "string"
+    },
+    "seller_email": {
+      "type": "string"
+    },
+    "seller_phone": {
+      "type": "string"
+    },
+    "buyer_agent_name": {
+      "type": "string"
+    },
+    "buyer_agent_brokerage": {
+      "type": "string"
+    },
+    "seller_agent_name": {
+      "type": "string"
+    },
+    "seller_agent_brokerage": {
+      "type": "string"
+    },
+    "title_company": {
+      "type": "string"
+    },
+    "lender_name": {
+      "type": "string"
+    },
+    "purchase_price": {
+      "type": "number"
+    },
+    "earnest_money": {
+      "type": "number"
+    },
+    "commission_percent": {
+      "type": "number"
+    },
+    "commission_amount": {
+      "type": "number"
+    },
+    "commission_distributed_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the commission was distributed to the agent"
+    },
+    "listing_price": {
+      "type": "number"
+    },
+    "contract_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "closing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "inspection_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "appraisal_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "financing_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "title_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "possession_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "representing": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "seller",
+        "both"
+      ],
+      "default": "buyer"
+    },
+    "portal_token": {
+      "type": "string",
+      "description": "Secure token for client portal access"
+    },
+    "last_verified_at": {
+      "type": "string",
+      "description": "ISO datetime of the last automated verification check"
+    },
+    "last_verification_updated": {
+      "type": "boolean",
+      "description": "Whether the last verification found and applied new data changes"
+    },
+    "last_verification_source": {
+      "type": "string",
+      "description": "Source used during the last verification"
+    },
+    "last_verification_changes": {
+      "type": "object",
+      "description": "Object describing what fields changed during last verification"
+    }
+  },
+  "required": [
+    "property_address",
+    "status"
+  ]
+}

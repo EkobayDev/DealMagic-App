@@ -1,0 +1,92 @@
+{
+  "name": "Brokerage",
+  "type": "object",
+  "properties": {
+    "license_id": {
+      "type": "string",
+      "description": "Brokerage license ID (primary key)"
+    },
+    "brokerage_name": {
+      "type": "string",
+      "description": "Legal brokerage name"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "URL of the brokerage logo"
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "main_phone": {
+      "type": "string",
+      "description": "Main office phone number"
+    },
+    "website_url": {
+      "type": "string",
+      "description": "Brokerage website URL"
+    },
+    "broker_name": {
+      "type": "string",
+      "description": "Designated broker full name"
+    },
+    "broker_id": {
+      "type": "string",
+      "description": "Designated broker license ID"
+    },
+    "broker_phone": {
+      "type": "string",
+      "description": "Designated broker direct phone"
+    },
+    "broker_email": {
+      "type": "string",
+      "description": "Designated broker email address"
+    },
+    "commission_logic": {
+      "type": "object",
+      "description": "Commission split logic for this brokerage",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "cap",
+            "flat_split",
+            "none"
+          ],
+          "description": "cap = brokerage takes a % until a YTD cap is reached, then agent keeps 100%; flat_split = fixed agent/brokerage split always; none = no logic configured"
+        },
+        "brokerage_split_pct": {
+          "type": "number",
+          "description": "Percentage brokerage takes (e.g. 30 = 30%)"
+        },
+        "brokerage_cap": {
+          "type": "number",
+          "description": "Maximum brokerage earns per year (used when type = cap)"
+        }
+      },
+      "default": {}
+    },
+    "notes": {
+      "type": "string"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "User-defined custom key-value fields",
+      "default": {}
+    }
+  },
+  "required": [
+    "license_id",
+    "brokerage_name"
+  ]
+}

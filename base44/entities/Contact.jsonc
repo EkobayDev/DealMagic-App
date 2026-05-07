@@ -1,0 +1,132 @@
+{
+  "name": "Contact",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "seller",
+        "lender",
+        "title",
+        "agent",
+        "other"
+      ],
+      "default": "buyer"
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "transaction_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of linked transactions"
+    },
+    "contact2_name": {
+      "type": "string",
+      "description": "Co-buyer / Contact #2 full name"
+    },
+    "contact2_relation": {
+      "type": "string",
+      "description": "Relation of Contact #2 to primary contact"
+    },
+    "contact2_phone": {
+      "type": "string"
+    },
+    "contact2_email": {
+      "type": "string"
+    },
+    "contact2_address": {
+      "type": "string"
+    },
+    "contact2_city": {
+      "type": "string"
+    },
+    "contact2_state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "contact2_zip": {
+      "type": "string"
+    },
+    "agent_of_choice_license": {
+      "type": "string",
+      "description": "License ID of the agent of choice associated with this contact"
+    },
+    "agent_of_choice_name": {
+      "type": "string",
+      "description": "Name of the agent of choice"
+    },
+    "buyer_agent_name": {
+      "type": "string",
+      "description": "Buyer's agent full name"
+    },
+    "buyer_agent_brokerage": {
+      "type": "string",
+      "description": "Buyer agent's brokerage name"
+    },
+    "broker_address": {
+      "type": "string",
+      "description": "Brokerage street address"
+    },
+    "broker_city": {
+      "type": "string"
+    },
+    "broker_state": {
+      "type": "string",
+      "default": "OK"
+    },
+    "broker_zip": {
+      "type": "string"
+    },
+    "broker_license_number": {
+      "type": "string",
+      "description": "Broker license number"
+    },
+    "broker_supervisor": {
+      "type": "string",
+      "description": "Broker supervisor full name"
+    },
+    "broker_supervisor_email": {
+      "type": "string",
+      "description": "Broker supervisor email address"
+    },
+    "broker_supervisor_website": {
+      "type": "string",
+      "description": "Broker supervisor website URL"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "User-defined custom key-value fields",
+      "default": {}
+    }
+  },
+  "required": [
+    "full_name"
+  ]
+}

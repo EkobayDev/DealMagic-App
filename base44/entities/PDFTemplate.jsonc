@@ -1,0 +1,79 @@
+{
+  "name": "PDFTemplate",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Template name"
+    },
+    "pdf_url": {
+      "type": "string",
+      "description": "URL of the uploaded PDF file"
+    },
+    "pdf_name": {
+      "type": "string",
+      "description": "Original filename of the uploaded PDF"
+    },
+    "field_mappings": {
+      "type": "array",
+      "description": "Array of field pin definitions: { fieldKey, label, page, x, y }",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fieldKey": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "page": {
+            "type": "number"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        }
+      },
+      "default": []
+    },
+    "custom_questions": {
+      "type": "array",
+      "description": "User-defined questions for the fill & export questionnaire",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "question_order": {
+      "type": "array",
+      "description": "Ordered list of question IDs for custom ordering",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "removed_question_ids": {
+      "type": "array",
+      "description": "IDs of auto-detected questions the user removed",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "question_overrides": {
+      "type": "object",
+      "description": "Label/hint overrides for auto-detected questions by id",
+      "default": {}
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "pdf_url"
+  ]
+}

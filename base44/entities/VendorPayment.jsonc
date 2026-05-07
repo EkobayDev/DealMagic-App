@@ -1,0 +1,70 @@
+{
+  "name": "VendorPayment",
+  "type": "object",
+  "properties": {
+    "vendor_id": {
+      "type": "string",
+      "description": "ID of the vendor"
+    },
+    "vendor_name": {
+      "type": "string",
+      "description": "Vendor business name"
+    },
+    "vendor_email": {
+      "type": "string",
+      "description": "Vendor email address"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Payment amount in dollars"
+    },
+    "description": {
+      "type": "string",
+      "description": "What the payment is for"
+    },
+    "payment_type": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "invoice"
+      ],
+      "description": "direct = pay now via card, invoice = send Stripe invoice to vendor"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "paid",
+        "invoiced",
+        "failed"
+      ],
+      "default": "pending"
+    },
+    "stripe_payment_intent_id": {
+      "type": "string"
+    },
+    "stripe_invoice_id": {
+      "type": "string"
+    },
+    "stripe_invoice_url": {
+      "type": "string",
+      "description": "Hosted Stripe invoice URL"
+    },
+    "transaction_id": {
+      "type": "string",
+      "description": "Optional linked transaction"
+    },
+    "transaction_address": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "vendor_id",
+    "vendor_name",
+    "amount",
+    "payment_type"
+  ]
+}

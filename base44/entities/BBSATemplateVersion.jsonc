@@ -1,0 +1,53 @@
+{
+  "name": "BBSATemplateVersion",
+  "type": "object",
+  "properties": {
+    "version_number": {
+      "type": "number",
+      "description": "Monotonically increasing version number"
+    },
+    "label": {
+      "type": "string",
+      "description": "Short description of what changed in this version"
+    },
+    "fields": {
+      "type": "array",
+      "description": "Snapshot of fields at publish time",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "sourceOptions": {
+      "type": "array",
+      "description": "Snapshot of source options at publish time",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "mappings": {
+      "type": "array",
+      "description": "Snapshot of PDF mappings at publish time",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "pdfUrl": {
+      "type": "string",
+      "description": "PDF URL at publish time"
+    },
+    "pdfName": {
+      "type": "string",
+      "description": "PDF filename at publish time"
+    },
+    "published_by": {
+      "type": "string",
+      "description": "Email of admin who published this version"
+    }
+  },
+  "required": [
+    "version_number"
+  ]
+}

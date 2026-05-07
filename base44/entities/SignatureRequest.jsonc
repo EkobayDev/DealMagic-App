@@ -1,0 +1,64 @@
+{
+  "name": "SignatureRequest",
+  "type": "object",
+  "properties": {
+    "form_doc_id": {
+      "type": "string"
+    },
+    "form_name": {
+      "type": "string"
+    },
+    "transaction_address": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the uploaded document to be signed"
+    },
+    "signer_name": {
+      "type": "string"
+    },
+    "signer_email": {
+      "type": "string"
+    },
+    "signer_role": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "seller",
+        "buyer_agent",
+        "seller_agent",
+        "other"
+      ],
+      "default": "buyer"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "signed",
+        "declined"
+      ],
+      "default": "pending"
+    },
+    "token": {
+      "type": "string"
+    },
+    "signature_data": {
+      "type": "string",
+      "description": "Base64 PNG of drawn signature"
+    },
+    "signed_at": {
+      "type": "string"
+    },
+    "field_snapshot": {
+      "type": "object",
+      "description": "Snapshot of form field values at time of request"
+    }
+  },
+  "required": [
+    "form_name",
+    "signer_role",
+    "status"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "ClientDocument",
+  "type": "object",
+  "properties": {
+    "contact_id": {
+      "type": "string",
+      "description": "ID of the linked Contact record"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Name of the contact at time of save"
+    },
+    "doc_type": {
+      "type": "string",
+      "enum": [
+        "bbsa",
+        "other"
+      ],
+      "default": "bbsa",
+      "description": "Type of document"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the document"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the saved PDF file"
+    },
+    "generated_by": {
+      "type": "string",
+      "description": "Email of the agent who generated the document"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "contact_id",
+    "contact_name",
+    "name",
+    "file_url"
+  ]
+}
